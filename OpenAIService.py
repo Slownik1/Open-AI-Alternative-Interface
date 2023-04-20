@@ -2,10 +2,13 @@ import openai as openai
 
 from API_KEY import *
 
-API_KEY= getApiKey()
+API_KEY= getOpenAIApiKey()
 
 openai.api_key = API_KEY
 
-# response = openai.Completion.create(model="text-davinci-003", prompt="Napisz cześć Magdalena ", temperature=1, max_tokens=100)
-# print(response)
+def sendPromptToGPT(prompt):
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{'role': 'user', 'content': prompt}])
+    return response
 
