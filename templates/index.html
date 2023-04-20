@@ -4,12 +4,14 @@
         <link rel="stylesheet" href="awsm.min.css">
     </head>
     <body>
-<p>Insert query</p>
-        <form>
-                <textarea>
-                    
+        <form method="post">
+            <title>INSERT QUERY</title>
+                <textarea name="prompt" placeholder="TEXT" rows="15" cols="60">
+                    {{request.form['prompt']}}
                 </textarea>
+                <br>
+                <button type="sumbit">SEND</button>
+            <p>{{ prompt }}</p>
         </form>
-
     </body>
 </html>
