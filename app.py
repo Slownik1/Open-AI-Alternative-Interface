@@ -16,11 +16,10 @@ def index():
 @app.route("/index", methods=['POST'])
 @app.route("/" , methods=['POST'])
 def response():
-    AIResponse = 'Hi'
     if request.method =="POST":
         userPrompt = request.form.get("prompt")
-        AIResponse = sendPromptToGPT(userPrompt)
-    return render_template("index.html", prompt=AIResponse)
+        AIResponse = sendPromptGPT3Turbo(userPrompt)
+    return render_template("index.html", prompt=jsonFormater(AIResponse))
 
 if __name__ == '__main__':
     app.run()
