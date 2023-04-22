@@ -9,7 +9,7 @@ openai.api_key = API_KEY
 
 def sendPromptGPT3Turbo(prompt):
     response = openai.ChatCompletion.create(
-        model="text-davinci-003",
+        model="gpt-3.5-turbo",
         messages=[{'role': 'user', 'content': prompt}])
     return response["choices"][0]["message"]["content"]
 

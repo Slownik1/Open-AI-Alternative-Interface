@@ -7,7 +7,12 @@
     <body>
         <form method="post">
             <title>INSERT QUERY</title>
-                <input type="text" name="prompt" placeholder="TEXT" content="test">
+                <input type="text" name="prompt" placeholder="TEXT">
+                <select name="modelSelect" class="selectpicker form-control">
+                  {% for o in data %}
+                  <option value="{{ o.name }}">{{ o.name }}</option>
+                  {% endfor %}
+                </select>
                     {{request.form['prompt']}}
                 <br>
                 <button type="sumbit">SEND</button>
