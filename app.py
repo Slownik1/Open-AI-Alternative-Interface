@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route("/" , methods=['GET'])
 def index():
     return render_template("index.html", prompt="Hi",
-                           data=[{'name':'GPT3Turbo'},{'name':'Davinci3'}])
+                           data=[{'name':'GPT3Turbo'},{'name':'Davinci3'},{'name':'Dalle'}])
 
 @app.route("/index", methods=['POST'])
 @app.route("/" , methods=['POST'])
@@ -23,7 +23,7 @@ def response():
     print(model)
     AIResponse = chooseModel(model, userPrompt)
     return render_template("index.html", prompt=AIResponse,
-             data=[{'name': 'Davinci3'}, {'name': 'GPT3Turbo'}])
+             data=[{'name':'GPT3Turbo'},{'name':'Davinci3'},{'name':'Dalle'}])
 
 if __name__ == '__main__':
     app.run()

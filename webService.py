@@ -9,5 +9,7 @@ def chooseModel(argument, userPrompt):
         case "GPT3Turbo":
             print('GPT')
             return sendPromptGPT3Turbo(userPrompt)
+        case "Dalle":
+            return sendPromptDalle(userPrompt)
         case default:
             return ""

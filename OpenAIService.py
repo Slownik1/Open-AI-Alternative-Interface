@@ -21,6 +21,13 @@ def sendPromptDavinci3(prompt):
         max_tokens=150)
     return response["choices"][0]["text"]
 
+def sendPromptDalle(prompt):
+    response = openai.Image.create(
+        prompt=prompt,
+        n=1,
+        size= "256×256")
+    return response
+
 def getAvalibleModel():
     response =openai.Model.list()
     return response
