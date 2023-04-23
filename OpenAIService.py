@@ -25,8 +25,8 @@ def sendPromptDalle(prompt):
     response = openai.Image.create(
         prompt=prompt,
         n=1,
-        size= "256×256")
-    return response
+        size= "256x256")
+    return response["data"][0]["url"]
 
 def getAvalibleModel():
     response =openai.Model.list()
