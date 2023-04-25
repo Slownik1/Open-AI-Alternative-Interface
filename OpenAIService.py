@@ -10,7 +10,8 @@ openai.api_key = API_KEY
 def sendPromptGPT3Turbo(prompt):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=[{'role': 'user', 'content': prompt}])
+        messages=[{'role': 'user',
+                   'content': prompt}])
     return response["choices"][0]["message"]["content"]
 
 def sendPromptDavinci3(prompt):
@@ -18,7 +19,7 @@ def sendPromptDavinci3(prompt):
         model="text-davinci-003",
         prompt=prompt,
         temperature=0,
-        max_tokens=150)
+        max_tokens=500)
     return response["choices"][0]["text"]
 
 def sendPromptDalle(prompt):
